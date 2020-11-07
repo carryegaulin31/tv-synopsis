@@ -1,7 +1,15 @@
 html    
     body
         h1= showData.title
-            h2= showData.developedBy
-            ul
-            a(href=`/showData${showData.developedBy}`)
-            li
+            h2 Developed By
+            each director in showData.developedBy
+                div
+                li= director
+            h2 Starring
+            each star in showData.starring
+                div
+                li= star
+            h2 Seasons
+            each number in showData.seasons
+                li= showData.seasons
+                a(href=`/showData.seasons/${showData.seasons}`)= showData.seasons

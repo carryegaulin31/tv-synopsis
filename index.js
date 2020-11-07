@@ -9,9 +9,25 @@ app.get('/', (request, response) => {
 })
 
 app.get('/showData/:title', (request, response) => { // colon important it says HEY ITS A VARIABLE
-  const showData = showData.find((show) => show.title === parseInt(request.params.title)) // THIS IS HOW YOU GET PARAM VALUES FROM THE URL!!!!!!
+  const show = showData.find((show) => show.title === parseInt(request.params.title)) // THIS IS HOW YOU GET PARAM VALUES FROM THE URL!!!!!!
 
-  return response.render('showData', {})
+  return response.render('showData', { show })
+})
+
+app.get('/showData', function (req, res, next) {
+  const directors = ['Ins Choi', 'Kevin White']
+
+  res.render('index', {
+    directors: directors
+  })
+})
+
+app.get('/showData', function (req, res, next) {
+  var starring = ['Paul Sun-Hyung Lee', 'Jean Yoon', 'Andrea Bang', 'Simu Liu', 'Andrew Phung', 'Nicole Power']
+
+  res.render('index', {
+    starring: starring
+  })
 })
 
 app.use(express.static('public'))
