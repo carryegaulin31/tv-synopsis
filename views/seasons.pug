@@ -1,0 +1,11 @@
+html
+    include partials/head.pug
+        body
+            h1 Kim's Convenience
+                h2= 'Season' + (' ') + show.number
+                    h3
+                    for episodes in show['episodes']
+                        p(class='first-div')= 'Episode Number:' + (' ') + episodes['number']
+                        p(class='second-div')= 'Title:' + (' ') + episodes['title']
+                        p= 'Director:' + (' ') + episodes['director']
+                        p= 'Episode Info:' + (' ') + episodes['synopsis']
