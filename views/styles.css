@@ -1,0 +1,7 @@
+a,
+a:active,
+a:hover,
+a:visited {
+    color: blue;
+    text-decoration: none;
+}

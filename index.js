@@ -1,23 +1,25 @@
 const express = require('express')
-const showdata = require('./showData')
-const showData = require('./showData')
+const showdata = require('./showdata')
 const app = express()
 
-app.set('view engine', 'pug')
+
 app.use(express.static('public'))
+
+app.set('view engine', 'pug')
 app.get('/', (request, response) => {
-  return response.render('index', { showData })
+  return response.render('index', { showdata })
 })
 
 app.get('/seasons/:id', (request, response) => {
-  const show = showdata.seasons[request.params.id - 1]
+  const season = showdata.seasons.find(season => season.number === parseInt(request.params.id))
 
-  return response.render('seasons', { show })
+  return response.render('seasons', { season, title: showdata.title })
 })
 
 app.all('*', (request, response) => {
   return response.sendStatus(404)
 })
 app.listen(1337, () => {
+  // eslint-disable-next-line no-console
   console.log('Listening on port 1337..')
 })

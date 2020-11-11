@@ -1,13 +1,21 @@
 html
+    include partials/head
+
     body
-        h1= showData.title
-            h2 Developed By
-            each developer in showData.developedBy
-                li= developer
-            h2 Starring
-            each star in showData.starring
-                li= star
-            h2 Seasons
-            each number in showData.seasons
-                li
-                    a(href=`/seasons/${number.number}`)= 'Season' + (' ') + number.number
+    h1= showdata.title
+
+    h2 Developed By
+    ul
+        for developer in showdata.developedBy
+            li= developer
+
+    h2 Starring
+    ul
+        for star in showdata.starring
+            li= star
+    
+    h2 Seasons
+    ul
+        for season in showdata.seasons
+            li
+            a(href=`/season/${season.number}`)= `Season ${season.number}`
