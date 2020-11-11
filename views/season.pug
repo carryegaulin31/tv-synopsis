@@ -1,5 +1,19 @@
 html    
-    include partials/head
+    include partials/head.pug
 
     body
-    h1= title
+    h1 Kim's Convenience
+    div(class="season")= `Season ${season.number}`
+
+    table
+        tr
+            th No.
+            th Title
+            th Director
+        for episode in season.episodes
+            tr
+                td(class="number")= episode.number
+                td(class="title")= episode.title
+                td(class="director")= episode.director
+            tr
+                td(colspan=3)= episode.synopsis

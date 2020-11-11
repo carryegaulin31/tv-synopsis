@@ -1,0 +1,49 @@
+body {
+    font-size: 16px;
+}
+
+a,
+a:active,
+a:hover,
+a:visited {
+    color: blue;
+    text-decoration: none;
+}
+
+.season {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+    width: 85%;
+}
+
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: blue;
+    color: white;
+    font-size: 18px;
+}
+
+th, td {
+    padding: 6px;
+}
+
+.number {
+    text-align: center;
+    width: 5%;
+}
+
+.title, .director {
+    padding-left: 20px;
+}
+
+
